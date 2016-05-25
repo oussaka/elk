@@ -14,7 +14,7 @@ Example Playbook
 ----------------
 
 	---
-	- hosts: sphetz
+	- hosts: all
 	  become: yes
 	  roles: 
 	    - { role: "dolbager.elk", kibana_server_name: "logs.you.domain.com", htpasswords: {name: "login", pass: "password"}}
