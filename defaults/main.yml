@@ -1,0 +1,21 @@
+---
+# defaults file for elk
+keys_url:
+  - {url: "https://packages.elastic.co/GPG-KEY-elasticsearch", keyserv: "", id: "" }
+  - {url: "http://nginx.org/keys/nginx_signing.key",keyserv: "", id: "" }
+  - {url: "", keyserv: "keyserver.ubuntu.com", id: "EEA14886"}
+
+repos:
+  - {url: "deb http://nginx.org/packages/mainline/debian/ jessie nginx"}
+  - {url: "deb https://packages.elastic.co/elasticsearch/2.x/debian stable main"}
+  - {url: "deb https://packages.elastic.co/logstash/2.3/debian stable main"}
+  - {url: "deb http://packages.elastic.co/kibana/4.5/debian stable main"}
+  - {url: "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main"}
+
+configs:
+  - {dest: "/etc/nginx/conf.d/kibana.conf", src: "templates/kibana.conf.j2"}
+  - {dest: "/etc/elasticsearch/elasticsearch.yml", src: "templates/elasticsearch.yml.j2"}
+  - {dest: "/etc/logstash/conf.d/01-in-out.conf", src: "templates/01-in-out.conf.j2"}
+
+kibana_server_name: ""
+htpasswords: ""

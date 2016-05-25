@@ -1,0 +1,6 @@
+---
+- include: repos.yml
+- include: base.yml
+- include: deploy_conf.yml
+- include: passwords.yml
+- include: services.yml

@@ -1,0 +1,14 @@
+#arguments = Additional arguments provided on the command line
+#enabled = Whether the service should start on boot. *At least one of state and enabled are required.*
+#name = Name of the service.
+#pattern = If the service does not respond to the status command, name a substring to look for as would be found in the output of the `ps' command as a stand-in for a status result.  If the string is found, the service will be assumed to be running.
+#runlevel = For OpenRC init scripts (ex: Gentoo) only.  The runlevel that this service belongs to.
+#sleep = If the service is being `restarted' then sleep this many seconds between the stop and start command. This helps to workaround badly behaving init scripts that exit immediately after signaling a process to stop.
+#state = `started'/`stopped' are idempotent actions that will not run commands unless necessary.  `restarted' will always bounce the service.  `reloaded' will always reload. *At least one of state and enabled are required.*
+- name: Start and enable services
+  service: enabled=yes  name={{item}} state=started
+  with_items:  
+    - nginx
+    - logstash
+    - elasticsearch
+    - kibana

@@ -1,0 +1,3 @@
+- name: deploy configuration
+  template: backup=yes  dest={{item.dest}} src={{item.src}}
+  with_items:  "{{configs}}"

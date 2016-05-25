@@ -1,0 +1,6 @@
+- name: add apt keys
+  apt_key: url={{item.url}} state=present keyserver={{item.keyserv}} id={{item.id}}
+  with_items: "{{ keys_url }}"
+- name: add apt repo's
+  apt_repository: repo={{item.url}}  state=present  update_cache=yes
+  with_items:  "{{repos}}"
