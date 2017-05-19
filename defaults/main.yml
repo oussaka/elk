@@ -3,7 +3,7 @@
 keys_url:
   - {url: "https://packages.elastic.co/GPG-KEY-elasticsearch", keyserv: "", id: "" }
   - {url: "http://nginx.org/keys/nginx_signing.key",keyserv: "", id: "" }
-  - {url: "", keyserv: "keyserver.ubuntu.com", id: "EEA14886"}
+  # - {url: "", keyserv: "keyserver.ubuntu.com", id: "EEA14886"}
 
 repos:
   - {url: "deb http://nginx.org/packages/mainline/debian/ jessie nginx"}
